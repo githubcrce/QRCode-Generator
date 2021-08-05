@@ -1,32 +1,27 @@
-name: CI/CD
-
+name: CI
 on:
   push:
-    branches: [ main ]
-
+    branches: [ master ]
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    
-    strategy:
-      matrix:
-        node-version: [ 14.x ]
-        
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v1
-    
-    - name: Set up Node.js ${{ matrix.node-version }}
+
+    - name: Set up Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
-        
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v2
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: main
-        BRANCH: gh-pages
-        FOLDER: dist/QRCode-Generator
-        BUILD_SCRIPT: npm install && npm run build -- --prod
+        node-version: '12.x'
+
+    - run: npm install
+    - run: npm install -g @angular/cli > /dev/null
+    - run: ng build --prod --output-path=dist --base-href="https://githubcrce.github.io/QRCode-Generator/"
+    
+    - name: Publish generated content to GitHub Pages
+      uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
+      with:
+          dir: dist
+          branch: gh-pages
+          token: ${{ secrets.ACCESS_TOKEN }}
