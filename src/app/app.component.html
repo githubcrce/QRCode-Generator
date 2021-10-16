@@ -1,62 +1,68 @@
-<h1 class="home-title">GithubCRCE QRCode Generator</h1>
-<section class="home-bg">
-<div class="wrapper">
-  <div class="flexContainer">
-    <div class="result">
-      <div class="meta">
-        <div><b>Value:</b> {{ qrdata }}</div>
-        <div><b>Element Type:</b> {{ elementTypeDisplay }}</div>
-        <div><b>Correction Level:</b> {{ levelDisplay }}</div>
-        <div><b>Scale:</b> {{ scale }}</div>
-        <div><b>Width:</b> {{ width }}</div>
-      </div>
-      <div class="qrcodeImage">
-        <ngx-qrcode [elementType]="elementType" [value]="qrdata" [scale]="scale" [width]="width"></ngx-qrcode>
-      </div>
-    </div>
+<div id="header">
+    <img src="../assets/images/github-crce.png" id="github-crce-logo">
+    <h1 id="home-title">GithubCRCE QRCode Generator</h1>
+    <label class="switch">
+      <input id="dark-to-light" type="checkbox" (change)="toggleCheck()" checked>
+      <span class="slider round"></span>
+    </label>
+</div>
 
-    <div class="controls">
-      <h3>Change Parameters</h3>
+<section class=" home-bg ">
+    <div class="wrapper ">
+        <div class="result ">
+            <div class="qrcodeImage ">
+                <ngx-qrcode [elementType]="elementType " [value]="qrdata " [scale]="scale " [width]="width "></ngx-qrcode>
+            </div>
+        </div>
 
-      <h4 class="tooltip">QR-Code Data
-        <span class="tooltiptext">Secret data or value which will be encrypted in QR Code</span>
-      </h4>
-      <label>
-        <input class="value-input" [(ngModel)]="qrdata" placeholder="GithubCRCE" />
+        <div class="controls ">
+            <h3>Change Parameters</h3>
+
+            <h4 class="tooltip ">QR-Code Data
+                <span class="tooltiptext ">Secret data or value which will be encrypted in QR Code</span>
+            </h4>
+            <label>
+        <input class="value-input " [(ngModel)]="qrdata " placeholder="GithubCRCE " />
       </label>
 
-      <h4 class="tooltip">Change Element Type
-        <span class="tooltiptext">Define the rendering type of QR Code</span>
-      </h4>
-      <button class="btn-control" (click)="changeElementType('img')">Image</button>
-      <button class="btn-control" (click)="changeElementType('url')">URL</button>
-      <button class="btn-control" (click)="changeElementType('canvas')">Canvas</button>
+            <h4 class="tooltip ">Change Element Type
+                <span class="tooltiptext ">Define the rendering type of QR Code</span>
+            </h4>
+            <button class="btn-control " (click)="changeElementType( 'img') ">Image</button>
+            <button class="btn-control " (click)="changeElementType( 'url') ">URL</button>
+            <button class="btn-control " (click)="changeElementType( 'canvas') ">Canvas</button>
 
-      <h4 class="tooltip">Change Error Correction Level
-        <span class="tooltiptext">Define the level of damage to the QR Code</span>
-      </h4>
-      <button class="btn-control" (click)="changeLevel('L')">Low</button>
-      <button class="btn-control" (click)="changeLevel('M')">Medium</button>
-      <button class="btn-control" (click)="changeLevel('Q')">Quartile</button>
-      <button class="btn-control" (click)="changeLevel('H')">High</button>
+            <h4 class="tooltip ">Change Error Correction Level
+                <span class="tooltiptext ">Define the level of damage to the QR Code</span>
+            </h4>
+            <button class="btn-control " (click)="changeLevel( 'L') ">Low</button>
+            <button class="btn-control " (click)="changeLevel( 'M') ">Medium</button>
+            <button class="btn-control " (click)="changeLevel( 'Q') ">Quartile</button>
+            <button class="btn-control " (click)="changeLevel( 'H') ">High</button>
 
-      <h4 class="tooltip">Change Width
-        <span class="tooltiptext">Define the size to render the QR Code image</span>
-      </h4>
-      <button class="btn-control" (click)="changeWidth(512)">512</button>
-      <button class="btn-control" (click)="changeWidth(256)">256</button>
-      <button class="btn-control" (click)="changeWidth(128)">128</button>
-      <button class="btn-control" (click)="changeWidth(64)">64</button>
-      <button class="btn-control" (click)="changeWidth(10)">10</button>
+            <h4 class="tooltip ">Change Width
+                <span class="tooltiptext ">Define the size to render the QR Code image</span>
+            </h4>
+            <button class="btn-control " (click)="changeWidth(512) ">512</button>
+            <button class="btn-control " (click)="changeWidth(256) ">256</button>
+            <button class="btn-control " (click)="changeWidth(128) ">128</button>
+            <button class="btn-control " (click)="changeWidth(64) ">64</button>
+            <button class="btn-control " (click)="changeWidth(10) ">10</button>
 
-      <h4 class="tooltip">Change Scale
-        <span class="tooltiptext">Resize or scale the lines in the QR Code</span>
-      </h4>
-      <button class="btn-control" (click)="changeScale(32)">32</button>
-      <button class="btn-control" (click)="changeScale(8)">8</button>
-      <button class="btn-control" (click)="changeScale(4)">4</button>
-      <button class="btn-control" (click)="changeScale(1)">1</button>
+            <h4 class="tooltip ">Change Scale
+                <span class="tooltiptext ">Resize or scale the lines in the QR Code</span>
+            </h4>
+            <button class="btn-control " (click)="changeScale(32) ">32</button>
+            <button class="btn-control " (click)="changeScale(8) ">8</button>
+            <button class="btn-control " (click)="changeScale(4) ">4</button>
+            <button class="btn-control " (click)="changeScale(1) ">1</button>
+        </div>
+        <div class="meta ">
+            <div><b>Value:</b> {{ qrdata }}</div>
+            <div><b>Element Type:</b> {{ elementTypeDisplay }}</div>
+            <div><b>Correction Level:</b> {{ levelDisplay }}</div>
+            <div><b>Scale:</b> {{ scale }}</div>
+            <div><b>Width:</b> {{ width }}</div>
+        </div>
     </div>
-  </div>
-</div>
 </section>
