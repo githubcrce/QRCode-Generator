@@ -1,133 +1,144 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-
-.home-title{
-  background-color: #17A4CB;
-  color: white;
-  padding: 5px;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
+#home-title {
+    background-color: #010409;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    display: inline;
+    position: absolute;
 }
 
-.home-bg{
-  background: #17A4CB;
-  width: 100%;
-  height: 100%;
-}
 .wrapper {
-  font-family: 'Montserrat', sans-serif;
-  }
-  
-  .flexContainer {
+    font-family: 'Montserrat', sans-serif;
+    height: 84vh;
+    background-color: #010409;
+    border-radius: 0 0 25px 25px;
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    padding-bottom: 15px;
+    min-height: 560px
+}
+
+.flexContainer {
     display: flex;
     flex: 1;
     flex-direction: row;
     align-items: flex-start;
     padding: 10px;
-  }
-  
-  .result {
+}
+
+.result {
     display: flex;
     flex: 1 1 200px;
     flex-direction: column;
     margin-left: 10px;
     margin-top: 5px;
-  }
+}
 
-  @media screen and (max-width: 767px) {
-    .home-title{
-      font-size: 24px;
+@media screen and (max-width: 767px) {
+    #home-title {
+        font-size: 24px;
     }
+    .flexContainer {
+        display: inline;
+    }
+    .meta {
+        width: 90%;
+    }
+    .controls {
+        margin-top: 20px;
+        width: 90%;
+    }
+}
 
-    .flexContainer{
-      display: inline;
-    }
-    .meta{
-      width: 90%;
-    } 
-    .controls{
-      margin-top: 20px;
-      width: 90%;
-    }
-  }
-  .meta{
+.meta {
     font-size: large;
     font-family: 'Montserrat', sans-serif;
     line-height: 26px;
     color: black;
     margin-bottom: 20px;
     margin-right: 10px;
-    border: 2px solid white;
+    border: 5px solid #916BBF;
     border-radius: 10px;
-    background-color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-  }
-  .value-input{
-    width: 300px;
+    background-color: #FDF6F0;
+    padding: 15px 2px 15px 10px;
+    height: fit-content;
+    margin-left: 5px;
+}
+
+.value-input {
+    width: 86%;
     height: 24px;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;;
-    border: 2px solid #17A4CB;
+    font-family: 'Montserrat', sans-serif;
+    border: 2px solid #916BBF;
     border-radius: 5px;
-  }
+}
 
-  .qrcodeImage {
+.qrcodeImage {
     display: flex;
     flex: 1;
     align-items: center;
     justify-content: center;
-  }
+}
 
-  ngx-qrcode{
-    border: 5px solid white;
+ngx-qrcode {
+    border: 5px solid #916BBF;
     background-color: white;
     padding: 2.5px 2.5px;
     border-radius: 10px;
-  }
-  
-  .controls {
-    flex: 1;
+}
+
+.controls {
     font-family: 'Montserrat', sans-serif;
-    border: 5px solid #17A4CB;
-    background: white;
-    padding-left: 20px;
-    padding-bottom: 20px;
+    border: 5px solid #916BBF;
+    background: #FDF6F0;
+    padding: 5px 5px 30px 15px;
     border-radius: 20px;
     color: black;
-    /* flex-direction: column; */
-  }
-  
-  .controls > div {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+.controls h3 {
+    margin: 10px 0 0 0px;
+    font-size: 20px;
+}
+
+.controls>div {
     display: block;
     flex: 0;
-  }
+}
 
-  .btn-control{
+.btn-control {
     height: 30px;
-    background: #17A4CB;
-    color: white;
-    border: 1px solid #086b86;
+    background: #39065A;
+    color: #fff;
+    border: 1px solid #fff;
     padding-left: 10px;
     padding-right: 10px;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-  }
-  .btn-control:hover{
-    background: #086b86;
-    color: white;
-    border: none;
-  }
+    margin: 0 1px;
+}
 
-  .tooltip {
+.btn-control:hover {
+    border: none;
+}
+
+.dark .tooltip {
     position: relative;
-  }
-  
-  .tooltip .tooltiptext {
+    margin: 12px 0 12px 0;
+}
+
+.tooltip .tooltiptext {
     visibility: hidden;
     width: 150px;
-    background-color:black;
+    background-color: black;
     color: #fff;
     text-align: center;
     padding: 5px 0;
@@ -139,8 +150,95 @@
     margin-left: 10px;
     padding: 5px;
     opacity: 0.5;
-  }
-  
-  .tooltip:hover .tooltiptext {
+}
+
+.tooltip:hover .tooltiptext {
     visibility: visible;
-  }
+}
+
+#github-crce-logo {
+    height: 80px;
+    width: 80px;
+    display: inline;
+    padding: 10px 0 0 0;
+}
+
+#header {
+    background-color: #010409;
+    border-radius: 14px 14px 0 0;
+}
+
+
+/*Switch*/
+
+
+/* The switch - the box around the slider */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+
+/* Hide default HTML checkbox */
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+/* The slider */
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(255, 200, 152);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-top: none;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #16C79A;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #39065A;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #39065A;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
